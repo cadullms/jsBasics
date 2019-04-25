@@ -1,3 +1,6 @@
+git link
+VS Code Link
+
 https://www.w3schools.com/Tags/tag_script.asp
 https://www.w3schools.com/js/js_conventions.asp
 https://www.w3schools.com/jquery/
