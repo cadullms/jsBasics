@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#actor").click(function(){
+                    var url = "https://dog.ceo/api/breeds/list";
+                    // Here we get values from the external URL of a so called API
+                    // (Application Programmers Interface), using the JQuery get()
+                    // method. This method talks via HTTP to the API and gets the 
+                    // resulting text. But the get function does not immediately
+                    // return our result, instead we need to pass a function to it
+                    // that will be called once the (potentially lengthy) network 
+                    // operation finishes. 
+                    console.log("Calling API at " + url + ".");
+                    $.get(url, function(data, status){
+                        console.log("Called API with status: " + data.status);
+                        // The API at https://dog.ceo/api/breeds/list/all gives us a JSON
+                        // string for an object with two properties: "message" (containing all the breeds) 
+                        // and "status". While the string is transported as a pure text object
+                        // (just try the URL in a browser), JavaScript conveniently converts it
+                        // to an object for us, so that we can directly access its properties.
+                        // In this case, we are only interested in one of those properties:
+                        // "data.message", because that contains our list of breeds.
+                        var breeds = data.message;
+                        var count = breeds.length;
+                        $("#target").text("We have information for " + count + " dog breeds.");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p id="target">0</p>
+        <button id="actor">X</button>
+    </body>
+</html>
