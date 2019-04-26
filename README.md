@@ -13,7 +13,9 @@ Some essential tools (all free) you should have installed:
 
 ### 1. InEventDeclaration
 
-This example (available [here](./01_InEventDeclaration/)) how to use JavaScript directly within the click event of a button. The code in this example is extremely simple (purposefully): It simply interprets the content (innerText) of an HTML paragraph as a number and increments that by 1. Effectively, this is counting the number of times the button was clicked.
+This example (available [here](./01_InEventDeclaration/)) how to use JavaScript directly within the click event of a button.
+
+The code in this example is extremely simple (purposefully): It simply interprets the content (innerText) of an HTML paragraph (``<p id="target">0</p>``) as a number, increments that number by 1 and sets the resulting number as the new content of the paragraph. Effectively, this is counting the number of times the button was clicked.
 
 Documentation:
 
